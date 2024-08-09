@@ -1,8 +1,15 @@
 const API_URL = 'http://localhost:3000/api'; // Replace with your actual API URL
 
+// Mock data
+const mockWeapons = [
+  { weapon_id: 1, name: "Auto Rifle 1", category: "Auto Rifle", type: "Primary", element: "Kinetic", power: 1350 },
+  { weapon_id: 2, name: "Hand Cannon 1", category: "Hand Cannon", type: "Primary", element: "Solar", power: 1340 },
+  // Add more mock weapons as needed
+];
+
 export const getWeapons = async () => {
-  const response = await fetch(`${API_URL}/weapons`);
-  return response.json();
+  // For development, return mock data instead of making an API call
+  return Promise.resolve(mockWeapons);
 };
 
 export const getWeaponsByCategory = async (category) => {
